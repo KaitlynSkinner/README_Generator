@@ -57,10 +57,18 @@ function generateMarkdown(data) {
   ${renderLicenseLink(data.license)}
 
   ## Installation
+  ${data.installation}
 
+  ## Usage 
+  ${data.usage}
 
   ${renderLicenseSection(data.license)}
 
+  ## How to Contribute
+  ${data.contribute}
+
+  ## Tests
+  ${data.tests}
 
 `;
 }

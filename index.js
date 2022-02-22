@@ -14,7 +14,12 @@ const readmeQuestions = () => {
 
     return inquirer
         .prompt([
-            //Begin 
+            //Begin This Application, or not 
+            {
+                type: 'input',
+                name: 'begin',
+                message: 'Please hit "RETURN/ENTER" to create a Professional README.md file. If you wish to exit please hit "ESC".',
+            },
             // Title of Application
             {
                 type: 'input',
@@ -29,9 +34,8 @@ const readmeQuestions = () => {
                     }
                 }
             },
-
+            // GitHub Username
             {
-                // GitHub Username
                 type: 'input',
                 name: 'github',
                 message: 'What is your GitHub Username?',
@@ -39,13 +43,13 @@ const readmeQuestions = () => {
                     if (nameInput) {
                         return true;
                     } else {
-                        console.log('Please enter your Username!');
+                        console.log('Please enter your GitHub Username!');
                         return false;
                     }
                 }
             },
+            // Email Address
             {
-                // Email Address 
                 type: 'input',
                 name: 'email',
                 message: 'Enter your Email Address.',
@@ -86,7 +90,7 @@ const readmeQuestions = () => {
                     }
                 }
             },
-            // Table of Contents
+            // Table of Contents - created dynamically
 
             // Installation
             {
@@ -97,7 +101,7 @@ const readmeQuestions = () => {
                     if (installation) {
                         return true;
                     } else {
-                        console.log('Please provide steps about your application!');
+                        console.log('Please provide steps to install your application!');
                         return false;
                     }
                 }
@@ -111,7 +115,7 @@ const readmeQuestions = () => {
                     if (usage) {
                         return true;
                     } else {
-                        console.log('Please provide a  about your application!');
+                        console.log('Please provide utilization about your application!');
                         return false;
                     }
                 }
@@ -143,13 +147,26 @@ const readmeQuestions = () => {
                 // look up which GNU license is most popular and only use that one
                 choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense', 'No License Used.']
             },
-            // Badges
+            // Badges - created dynamically
 
-            // Features
+            // Features - optional so confirm
+            // {
+            //     type: 'confirm',
+            //     name: 'featuresQuestion',
+            //     message: 'Do you wish to include a Features Section to your README?',
+            //     default: true
+            // },
             // {
             //     type: 'input',
             //     name: 'features',
             //     message: 'List and describe the feature of your application.',
+            //     when: ({ featuresQuestios }) => {
+            //         if (featuresQuestion) {
+            //             return true;
+            //         } else {
+            //             return false;
+            //         }
+            //     }
             // },
             // How to Contribute
             {
@@ -183,16 +200,7 @@ const readmeQuestions = () => {
 };
 
 
-// TODO: Create a function to write README file
-
-// TODO: Create a function to initialize app
-    //make sure keys are correct = 
-    //console.log("Please hit 'RETURN/ENTER' to create a Professional README.md file. If you wish to exit please hit 'ESC'.");
-    //allow an exit option = 
-    //console.log('Are you sure you want to exit?');
-
-
-// Function call to initialize app
+// Function call to write README file, and initialize app
 readmeQuestions()
     .then(readmeData => {
 
@@ -202,29 +210,9 @@ readmeQuestions()
             console.log('README page created! Check out README.md file to see!')
         });
     })
-//.then(writeToFile)
 
 // Keep this format here for now :
-// message: '# Title of Application',
-
-// message: '## User Story',
-
-// message: '## Description',
-
-// message: '## Table of Contents (optional)',
-
-// message: '## Installation' (optional),
-
-// message: '## Usage' (optional),
-
-// message: '## Credits' (optional),
-
-// message: '## License' (provide no license option),
-
-// message: '## Badges' (optional),
-
-// message: '## Features',
-
-// message: '## How to Contribute' (optional),
-
-// message: '## Tests' (optional),
+// ## GiHub User Name
+// ## Email Address
+// ## User Story (optional)
+// ## Credits (optional)
