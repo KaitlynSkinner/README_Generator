@@ -5,9 +5,9 @@ const fs = require('fs');
 // access functions in generateMarkdown.js
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
+// User specific questions - needed? merge with readmeQuestions
 const userQuestions = () => {
-    return inquirer
-    .prompt ([
+    [
         {
             // GitHub Username
             type: 'input',
@@ -23,7 +23,7 @@ const userQuestions = () => {
             }
         },
         {
-            // Email Address (send to email*?)
+            // Email Address - needed? remove?
             type: 'input',
             name: 'email',
             message: 'Enter your Email Address.',
@@ -36,7 +36,7 @@ const userQuestions = () => {
                 }
             }
         }
-    ])
+    ]
 };
 
 
@@ -52,8 +52,9 @@ const readmeQuestions = readmeData => {
     if (!readmeData.questions) {
         readmeData.questions = [];
     }
-        return inquirer
-        .prompt ([
+    return inquirer
+        .prompt([
+            //Begin 
             // Title of Application
             {
                 type: 'input',
@@ -246,35 +247,39 @@ const readmeQuestions = readmeData => {
             }
         ]);
 };
-    
+
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data, err) {
-    //if (err) throw err;
-    console.log(fileName);
+    if (err) throw err;
+
+    //const answers =  
     console.log(data);
-}
+};
 
 // TODO: Create a function to initialize app
 function init() {
     //make sure keys are correct = console.log("Please hit 'RETURN/ENTER' to create a Professional README.md file. If you wish to exit please hit 'ESC'.");
     //allow an exit option = console.log('Are you sure you want to exit?');
-    .then(userQuestions)
-    .then(readmeQuestions)
-    .then(readmeData => {
-        const readmePage = generatePage(readmeData);
+    //
 
-        fs.writeFile('./README.md', readmePage, err => {
-            if (err) throw new Error(err);
-
-            console.log('README page created! Check out README.md file to see!')
-        });
-    });
+    return inquirer.prompt(userQuestions, readmeQuestions);
 };
 
 // Function call to initialize app
 init()
+    .then(userQuestions)
+    .then(readmeQuestions)
+    .then(readmeData => {
+        const readmePage = generateMarkdown(readmeData);
 
+        await fs.promises.writeFile('./README.md', readmePage, err => {
+            if (err) throw new Error(err);
+
+            console.log('README page created! Check out README.md file to see!')
+        });
+    })
+//.then(writeToFile)
 
 // Keep this format here for now :
 // message: '# Title of Application',
