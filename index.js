@@ -41,17 +41,13 @@ const userQuestions = () => {
 
 
 // TODO: Create an array of questions for user input
-const readmeQuestions = readmeData => {
+const readmeQuestions = () => {
     console.log(`
     =================
     Add a New README.md
     =================
     `);
 
-    // Create an array to store users README data
-    if (!readmeData.questions) {
-        readmeData.questions = [];
-    }
     return inquirer
         .prompt([
             //Begin 
@@ -259,9 +255,10 @@ function writeToFile(fileName, data, err) {
 
 // TODO: Create a function to initialize app
 function init() {
-    //make sure keys are correct = console.log("Please hit 'RETURN/ENTER' to create a Professional README.md file. If you wish to exit please hit 'ESC'.");
-    //allow an exit option = console.log('Are you sure you want to exit?');
-    //
+    //make sure keys are correct = 
+    //console.log("Please hit 'RETURN/ENTER' to create a Professional README.md file. If you wish to exit please hit 'ESC'.");
+    //allow an exit option = 
+    //console.log('Are you sure you want to exit?');
 
     return inquirer.prompt(userQuestions, readmeQuestions);
 };
