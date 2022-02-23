@@ -34,48 +34,25 @@ const readmeQuestions = () => {
                     }
                 }
             },
-            // GitHub Username
+            // User Story - optional so confirm
+            {
+                type: 'confirm',
+                name: 'userStoryQuestion',
+                message: 'Do you wish to include a User Story Section to your README?',
+                default: true
+            },
             {
                 type: 'input',
-                name: 'github',
-                message: 'What is your GitHub Username?',
-                validate: nameInput => {
-                    if (nameInput) {
+                name: 'userStory',
+                message: 'Provide a user story about your application.',
+                when: ({ userStoryQuestion }) => {
+                    if (userStoryQuestion) {
                         return true;
                     } else {
-                        console.log('Please enter your GitHub Username!');
                         return false;
                     }
                 }
             },
-            // Email Address
-            {
-                type: 'input',
-                name: 'email',
-                message: 'Enter your Email Address.',
-                validate: email => {
-                    if (email) {
-                        return true;
-                    } else {
-                        console.log('Please enter your email!');
-                        return false;
-                    }
-                }
-            },
-            // User Story 
-            // {
-            //     type: 'input',
-            //     name: 'userStory',
-            //     message: 'Provide a user story about your application.',
-            //     validate: userStoryInput => {
-            //         if (userStoryInput) {
-            //             return true;
-            //         } else {
-            //             console.log('Please provide a user story for your application!');
-            //             return false;
-            //         }
-            //     }
-            // },
             // Description 
             {
                 type: 'input',
@@ -121,53 +98,53 @@ const readmeQuestions = () => {
                 }
             },
             // Credits - optional so confirm
-            // {
-            //     type: 'confirm',
-            //     name: 'creditsQuestion',
-            //     message: 'Do you wish to include a Credits Section to your README?',
-            //     default: true
-            // },
-            // {
-            //     type: 'input',
-            //     name: 'link',
-            //     message: 'Please link any collaborators, and/or give credit to anyone involved in your application.',
-            //     when: ({ creditsQuestion }) => {
-            //         if (creditsQuestion) {
-            //             return true;
-            //         } else {
-            //             return false;
-            //         }
-            //     }
-            // },
+            {
+                type: 'confirm',
+                name: 'credits',
+                message: 'Do you wish to include a Credits Section to your README?',
+                default: true
+            },
+            {
+                type: 'link',
+                name: 'credits',
+                message: 'Please link any collaborators, and/or give credit to anyone involved in your application.',
+                when: ({ credits }) => {
+                    if (credits) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            },
             // License - provide no license option 
             {
                 type: 'list',
                 name: 'license',
                 message: 'What license do you wish to use? ',
                 // look up which GNU license is most popular and only use that one
-                choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'The Unlicense', 'No License Used.']
+                choices: ['GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3', 'Mozilla Public License 2.0', 'Apache License 2.0', 'MIT License', 'Boost Software License 1.0', 'ISC License', 'The Unlicense', 'No License Used.']
             },
             // Badges - created dynamically
 
             // Features - optional so confirm
-            // {
-            //     type: 'confirm',
-            //     name: 'featuresQuestion',
-            //     message: 'Do you wish to include a Features Section to your README?',
-            //     default: true
-            // },
-            // {
-            //     type: 'input',
-            //     name: 'features',
-            //     message: 'List and describe the feature of your application.',
-            //     when: ({ featuresQuestios }) => {
-            //         if (featuresQuestion) {
-            //             return true;
-            //         } else {
-            //             return false;
-            //         }
-            //     }
-            // },
+            {
+                type: 'confirm',
+                name: 'features',
+                message: 'Do you wish to include a Features Section to your README?',
+                default: true
+            },
+            {
+                type: 'input',
+                name: 'features',
+                message: 'List and describe the feature of your application.',
+                when: ({ features }) => {
+                    if (features) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                }
+            },
             // How to Contribute
             {
                 type: 'input',
@@ -195,6 +172,34 @@ const readmeQuestions = () => {
                         return false;
                     }
                 }
+            },
+            // GitHub Username
+            {
+                type: 'input',
+                name: 'nameInput',
+                message: 'What is your GitHub Username?',
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    } else {
+                        console.log('Please enter your GitHub Username!');
+                        return false;
+                    }
+                }
+            },
+            // Email Address
+            {
+                type: 'input',
+                name: 'email',
+                message: 'Enter your Email Address.',
+                validate: email => {
+                    if (email) {
+                        return true;
+                    } else {
+                        console.log('Please enter your email!');
+                        return false;
+                    }
+                }
             }
         ]);
 };
@@ -214,5 +219,3 @@ readmeQuestions()
 // Keep this format here for now :
 // ## GiHub User Name
 // ## Email Address
-// ## User Story (optional)
-// ## Credits (optional)
