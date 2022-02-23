@@ -22,7 +22,7 @@ function renderLicenseBadge(license) {
     case 'The Unlicense' :
       return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`;
     case 'No License Used.': 
-      return '';
+      return `[![License: No License Used](https://img.shields.io/badge/license-No%20License%20Used-purple.svg)]`;
   }
 };
 
@@ -45,7 +45,8 @@ function renderLicenseSection(license) {
       return '';
     } else {
       return `## License
-  Sentence${license}
+  The license that was used for this application is:\n?
+  ${license}
        `;
     }
 };
@@ -96,16 +97,14 @@ function generateMarkdown(data) {
   ## Description 
   ${data.description}
 
-${renderUserStory(data.userStory)}
-
-${renderFeatures(data.features)}
+  ${renderUserStory(data.userStory)}
 
   ## Table of Contents
-  ${renderFeatures(data.features)}
+  * [Features](#features)
   * [Installation](#installation)
   * [Usage](#usage)
-  ${renderLicenseLink(data.license)}
-  ${renderCredits(data.credits)}
+  * [License](#license)
+  * [Credits](#credits)
   * [How to Contribute](#howtocontribute)
   * [Tests](#tests)
   
@@ -119,7 +118,7 @@ ${renderFeatures(data.features)}
 
   ${renderLicenseSection(data.license)}
 
-${renderCredits(data.credits)}
+  ${renderCredits(data.credits)}
 
   ## How to Contribute
   ${data.contribute}
@@ -128,8 +127,8 @@ ${renderCredits(data.credits)}
   ${data.tests}
 
   ## Questions
-  If you have any questions please feel free to contact me. 
-  Email: ${data.email}
+  If you have any questions please feel free to contact me.\n? 
+  Email: ${data.email}\n?
   GitHub:  ${data.nameInput}
 
 `;

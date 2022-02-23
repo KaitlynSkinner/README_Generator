@@ -106,7 +106,7 @@ const readmeQuestions = () => {
             },
             {
                 type: 'link',
-                name: 'credits',
+                name: 'creditsQuestion',
                 message: 'Please link any collaborators, and/or give credit to anyone involved in your application.',
                 when: ({ credits }) => {
                     if (credits) {
