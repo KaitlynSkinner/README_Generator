@@ -1,26 +1,26 @@
 
   # README_Generator
 
-  [![License: No License Used](https://img.shields.io/badge/license-No%20License%20Used-purple.svg)]
+  ![License: No License Used](https://img.shields.io/badge/license-No%20License%20Used-purple.svg)
   
   ## Description 
   A command-line application that dynamically generates a professional README.md file from a user's input.
 
   ## User Story
-As a user I want to easily generate a README.md file for my application.
+  As a user I want to easily generate a README.md file for my application.
      
 
   ## Table of Contents
   * [Features](#features)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [License](#license)
+  
   * [Credits](#credits)
   * [How to Contribute](#howtocontribute)
   * [Tests](#tests)
   
   ## Features
-true
+Easily and quickly create a README.md from the command line for any application or project!
      
 
   ## Installation
@@ -32,7 +32,7 @@ true
   
 
   ## Credits
-true
+The application does not have any collaborators at this time.
      
 
   ## How to Contribute
@@ -43,8 +43,8 @@ true
 
   ## Questions
   If you have any questions please feel free to contact me.
-? 
+
   Email: kaitlyneskinner@gmail.com
-?
+
   GitHub:  kaitlynskinner
 

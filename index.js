@@ -34,21 +34,16 @@ const readmeQuestions = () => {
                     }
                 }
             },
-            // User Story - optional so confirm
-            {
-                type: 'confirm',
-                name: 'userStoryQuestion',
-                message: 'Do you wish to include a User Story Section to your README?',
-                default: true
-            },
+            // User Story - optional but included
             {
                 type: 'input',
                 name: 'userStory',
-                message: 'Provide a user story about your application.',
-                when: ({ userStoryQuestion }) => {
-                    if (userStoryQuestion) {
+                message: 'What is your applications user story?',
+                validate: userStoryInput => {
+                    if (userStoryInput) {
                         return true;
                     } else {
+                        console.log('Please enter the user story of your application!');
                         return false;
                     }
                 }
@@ -97,21 +92,16 @@ const readmeQuestions = () => {
                     }
                 }
             },
-            // Credits - optional so confirm
-            {
-                type: 'confirm',
-                name: 'credits',
-                message: 'Do you wish to include a Credits Section to your README?',
-                default: true
-            },
+            // Credits - optional but included
             {
                 type: 'link',
-                name: 'creditsQuestion',
+                name: 'credits',
                 message: 'Please link any collaborators, and/or give credit to anyone involved in your application.',
-                when: ({ credits }) => {
-                    if (credits) {
+                validate: creditsInput => {
+                    if (creditsInput) {
                         return true;
                     } else {
+                        console.log('Please enter a credits section. If none included none. Example:"This application does not have any collaborators at this time."');
                         return false;
                     }
                 }
@@ -126,21 +116,16 @@ const readmeQuestions = () => {
             },
             // Badges - created dynamically
 
-            // Features - optional so confirm
-            {
-                type: 'confirm',
-                name: 'features',
-                message: 'Do you wish to include a Features Section to your README?',
-                default: true
-            },
+            // Features - optional but included
             {
                 type: 'input',
                 name: 'features',
                 message: 'List and describe the feature of your application.',
-                when: ({ features }) => {
-                    if (features) {
+                validate: featuresInput => {
+                    if (featuresInput) {
                         return true;
                     } else {
+                        console.log('Please enter the features of your application section.');
                         return false;
                     }
                 }
@@ -173,7 +158,8 @@ const readmeQuestions = () => {
                     }
                 }
             },
-            // GitHub Username
+            // Questions section consisting of GitHub UserName and Email Address for contact purposes
+            // GitHub Username 
             {
                 type: 'input',
                 name: 'nameInput',
@@ -215,7 +201,3 @@ readmeQuestions()
             console.log('README page created! Check out README.md file to see!')
         });
     })
-
-// Keep this format here for now :
-// ## GiHub User Name
-// ## Email Address

@@ -22,7 +22,7 @@ function renderLicenseBadge(license) {
     case 'The Unlicense' :
       return `[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)`;
     case 'No License Used.': 
-      return `[![License: No License Used](https://img.shields.io/badge/license-No%20License%20Used-purple.svg)]`;
+      return `![License: No License Used](https://img.shields.io/badge/license-No%20License%20Used-purple.svg)`;
   }
 };
 
@@ -103,7 +103,7 @@ function generateMarkdown(data) {
   * [Features](#features)
   * [Installation](#installation)
   * [Usage](#usage)
-  * [License](#license)
+  ${renderLicenseLink(data.license)}
   * [Credits](#credits)
   * [How to Contribute](#howtocontribute)
   * [Tests](#tests)
