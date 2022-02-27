@@ -29,7 +29,7 @@ Easily and quickly create a README.md from the command line for any application 
   ## Usage 
   Once installed, type "node index" to begin creating your README.md. There will be a series of instructional prompts to answer. For the best result, attentively read the prompts and provide as much detail as you desire. Lastly, open README.md to view you completed file!
   [![Watch the video](https://img.youtube.com/vi/jCOxYI-tqm0/0.jpg)](https://www.youtube.com/watch?v=jCOxYI-tqm0)
-  ![Deployed Application](https://github.com/KaitlynSkinner/README_Generator/blob/48832ea8c936166240f910babd663f93bd6532af/images/Mocku-up.md.png?raw=true)
+  ![Deployed Application](https://github.com/KaitlynSkinner/README_Generator/blob/da47d8120e21322c46e09ad64d0883add73bf3de/images/Mock-up.md.png?raw=true)
 
   ## License
   The license that was used for this application is:
