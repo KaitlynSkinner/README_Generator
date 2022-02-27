@@ -18,7 +18,7 @@ const readmeQuestions = () => {
             {
                 type: 'input',
                 name: 'begin',
-                message: 'Please hit "RETURN/ENTER" to create a Professional README.md file. If you wish to exit please hit "ESC".',
+                message: 'Please hit "RETURN/ENTER" to create a Professional README.md file. If you wish to exit please hit "Ctrl+C".',
             },
             // Title of Application
             {
