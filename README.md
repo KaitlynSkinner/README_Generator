@@ -33,7 +33,7 @@ Easily and quickly create a README.md from the command line for any application 
 
   ## License
   The license that was used for this application is:
-?
+
   No License Used.
        
 
@@ -49,8 +49,7 @@ The application does not have any collaborators at this time.
 
   ## Questions
   If you have any questions please feel free to contact me.
-? 
+
   Email: kaitlyneskinner@gmail.com
-?
   GitHub:  kaitlynskinner
 
